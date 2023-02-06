@@ -120,6 +120,8 @@ function managerPrompt() {
         //push response into empty employee array /* always first instance */
         employeeObjects.push(manager);
 
+        inputOption();
+
       })
       .catch(err => {
 
@@ -151,6 +153,8 @@ function managerPrompt() {
       //push response into employee array
       employeeObjects.push(engineer);
 
+      inputOption();
+
     }).catch(err => {
 
         //throw new error and print to console.log
@@ -179,6 +183,8 @@ function managerPrompt() {
 
       //push response into employee array
       employeeObjects.push(intern);
+
+      inputOption();
   
     }).catch(err => {
 
@@ -213,7 +219,7 @@ function inputOption() {
                 internPrompt();
                 break;
             case "Finish building the team":
-                buildTeam();
+                //buildTeam();
                 break;
                 default:
                     throw new Error('selection undefined - review inputOption');
@@ -232,4 +238,8 @@ function buildTeam() {
     }
     fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
   }
+
+// initialise function to start application
+
+managerPrompt();
 
