@@ -12,3 +12,88 @@ const render = require("./src/page-template.js");
 
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
+
+
+/* consider that user will be prompted intial questions, then presented with 2 other sets of questions if option selected */
+
+// create an array of questions that will be prompted by inquirer
+
+const managerPrompts = [
+
+    {
+      type: "input",
+      name: "name",
+      message: "Please enter Team manager's name",
+    },
+    {
+      type: "input",
+      name: "employeeID",
+      message: "Please enter Team manager's employee ID",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Please enter Team manager's email address",
+    },
+    {
+      type: "input",
+      name: "officeNumber",
+      message: "Please enter Team manager's office number",
+    },
+
+  ];
+  
+/* questions asked if engineer option selected */
+
+  const EngineerPrompts = [
+
+    {
+      type: "input",
+      name: "name",
+      message: "Please enter engineer's name",
+    },
+    {
+      type: "input",
+      name: "employeeID",
+      message: "Please enter engineer's ID",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Please enter engineer's email",
+    },
+    {
+      type: "input",
+      name: "github",
+      message: "Please enter engineer's GitHub username",
+    },
+
+  ];
+  
+  /* questions asked if Intern option selected */
+
+  const InternPrompts = [
+
+    {
+      type: "input",
+      name: "name",
+      message: "Please enter intern's name",
+    },
+    {
+      type: "input",
+      name: "employeeID",
+      message: "Please enter intern's ID",
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "Please enter intern's email",
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "Please enter intern's school",
+    },
+
+  ];
+  
