@@ -118,12 +118,12 @@ function managerPrompt() {
         );
   
         //push response into empty employee array /* always first instance */
-
         employeeObjects.push(manager);
 
       })
       .catch(err => {
 
+        //throw new error and print to console.log
         throw new Error(`Error message : ${err.message}`);
 
       });
@@ -138,6 +138,7 @@ function managerPrompt() {
         .prompt([...EngineerPrompts])
         .then(response => {
 
+    //create new instance of engineer object using class
       let engineer = new Engineer(
 
         response.name,
@@ -148,12 +149,42 @@ function managerPrompt() {
       );
 
       //push response into employee array
-
       employeeObjects.push(engineer);
 
     }).catch(err => {
 
+        //throw new error and print to console.log
         throw new Error(`Error message : ${err.message}`);
 
     });
   }
+
+
+ //create function to prompt questions for Intern input
+
+  function internPrompt() {
+    inquirer
+        .prompt([...InternPrompts])
+        .then(response => {
+
+    //create new instance of intern object using class
+      const intern = new Intern(
+
+        response.name,
+        response.employeeID,
+        response.email,
+        response.school
+
+      );
+
+      //push response into employee array
+      employeeObjects.push(intern);
+  
+    }).catch(err => {
+
+        //throw new error and print to console.log
+        throw new Error(`Error message : ${err.message}`);
+
+    });
+  }
+
