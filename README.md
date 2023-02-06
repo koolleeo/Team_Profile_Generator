@@ -14,7 +14,7 @@
 
 ## Description
 
-Use node.js and the appropriate npm modules to create a professional README generator which meets the following technical specification
+Use node.js and the appropriate npm modules to create a Team Profile Generator which meets the following technical specification
 
 ### User Story
 
