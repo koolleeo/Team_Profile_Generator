@@ -188,3 +188,35 @@ function managerPrompt() {
     });
   }
 
+//create function to prompt for user input, then call function or exit
+
+function inputOption() {
+
+    inquirer
+      .prompt([
+        {
+          type: "list",
+          name: "option",
+          message: "Type of employee you wish to add?",
+          choices: ["Add an engineer", "Add an intern", "Finish building the team"],
+        },
+      ])
+      .then(response => {
+
+        //create switch statement to call function based on user selection
+
+        switch(response.option){
+            case "Add an engineer":
+                engineerPrompt();
+                break;
+            case "Add an intern":
+                internPrompt();
+                break;
+            case "Finish building the team":
+                //need function to generate HTML
+        }
+
+      });
+  }
+
+  inputOption()
