@@ -117,9 +117,9 @@ function managerPrompt() {
           
         );
   
-        //push response into empty employee array
+        //push response into empty employee array /* always first instance */
+
         employeeObjects.push(manager);
-        // console.log(employeeObjects); 
 
       })
       .catch(err => {
@@ -130,4 +130,30 @@ function managerPrompt() {
 
   }
   
-  managerPrompt();
+
+  //create function to prompt questions for engineer input
+
+  function engineerPrompt() {
+    inquirer
+        .prompt([...EngineerPrompts])
+        .then(response => {
+
+      let engineer = new Engineer(
+
+        response.name,
+        response.employeeID,
+        response.email,
+        response.github
+
+      );
+
+      //push response into employee array
+
+      employeeObjects.push(engineer);
+
+    }).catch(err => {
+
+        throw new Error(`Error message : ${err.message}`);
+
+    });
+  }
