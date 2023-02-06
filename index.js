@@ -13,7 +13,6 @@ const render = require("./src/page-template.js");
 
 // TODO: Write Code to gather information about the development team members, and render the HTML file.
 
-
 /* consider that user will be prompted intial questions, then presented with 2 other sets of questions if option selected */
 
 // create an array of questions that will be prompted by inquirer
@@ -96,4 +95,39 @@ const managerPrompts = [
     },
 
   ];
+
+// create an empty array to push in employee objects
+
+let employeeObjects = [];
+
+//create function to prompt questions for manager input
+
+function managerPrompt() {
+    inquirer
+      .prompt([...managerPrompts])
+      .then(response => {
+        
+        //create new instance of manager object using class
+        let manager = new Manager(
+
+          response.name,
+          response.employeeID,
+          response.email,
+          response.officeNumber
+          
+        );
   
+        //push response into empty employee array
+        employeeObjects.push(manager);
+        // console.log(employeeObjects); 
+
+      })
+      .catch(err => {
+
+        throw new Error(`Error message : ${err.message}`);
+
+      });
+
+  }
+  
+  managerPrompt();
