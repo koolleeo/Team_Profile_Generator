@@ -10,7 +10,7 @@
 >[License](#license)\
 >[Contributing](#contributing)\
 >[Tests](#tests)\
->[Questions](#questions)
+>[Questions](#questions)\
 
 ## Description
 
@@ -110,7 +110,6 @@ Write it to a file named team.html in the output folder.
 
 You can use the provided variable outputPath to target this location.
 
-
 ## Installation
 Steps that should be taken to install your project. 
 
@@ -145,5 +144,9 @@ Contact me by email.
 Visit my GitHub page.
 
 [GitHub page](https://github.com/koolleeo/)
+
+## Mock up of HTML output file
+
+![12-object-oriented-programming-challenge-demo](https://user-images.githubusercontent.com/86853558/217317184-1926e605-6113-4132-9709-e56191f85e90.png)
   
   
