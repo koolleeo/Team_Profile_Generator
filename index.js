@@ -96,6 +96,43 @@ const managerPrompts = [
 
   ];
 
+  //create a function that validates that user input contains no numbers or special characters
+
+  const validateNoNumbersSpecialChar = async (input) => {
+    if (!/^[a-zA-Z -]*$/.test(input)) {
+       return 'You cannot use Numbers or special characters';
+    }
+    return true;
+  };
+  
+  //create a function that validates that user input contains no special characters
+
+  const validateNoSpecialChar = async (input) => {
+    if (!/^[a-zA-Z0-9 -]*$/.test(input)) {
+       return 'You cannot use special characters';
+    }
+    return true;
+  };
+  
+  //create a function that validates that user enters a valid email format
+  
+  const validateEmail = async (email) => {
+    if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+       return 'Please enter a valid email address';
+    }
+    return true;
+  };
+  
+//create a function that validates that user input contains numbers or spaces only
+
+  const validateNumbersOnly = async (number) => {
+    if (!/^[0-9 ]+$/.test(number)) {
+       return 'Please use numbers only';
+    } 
+      return true;
+    
+  };
+
 // create an empty array to push in employee objects
 
 let employeeObjects = [];
@@ -242,4 +279,5 @@ function buildTeam() {
 // initialise function to start application
 
 managerPrompt();
+  
 
