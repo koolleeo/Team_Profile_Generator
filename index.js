@@ -219,7 +219,7 @@ function inputOption() {
                 internPrompt();
                 break;
             case "Finish building the team":
-                //buildTeam();
+                buildTeam();
                 break;
                 default:
                     throw new Error('selection undefined - review inputOption');
@@ -236,7 +236,7 @@ function buildTeam() {
     if (!fs.existsSync(OUTPUT_DIR)) {
       fs.mkdirSync(OUTPUT_DIR)
     }
-    fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+    fs.writeFileSync(outputPath, render(employeeObjects), "utf-8");
   }
 
 // initialise function to start application
